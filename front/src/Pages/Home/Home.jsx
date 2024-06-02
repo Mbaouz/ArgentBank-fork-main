@@ -3,13 +3,17 @@ import './home.css';
 import iconChat from '../../img/icon-chat.png';
 import iconMoney from '../../img/icon-money.png';
 import iconSecurity from '../../img/icon-security.png';
+import Header from '../../Components/Header/Header';
+import HeaderOnLine from '../../Components/HeaderOnLine/HeaderOnLine';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
-
+  const token = useSelector(state => state.auth.token);
 return (
 
-    <div>
-
+    <main>
+    {token? <HeaderOnLine/> : <Header/>}
+    
     <div className="hero">
        
     <section className="hero-content">
@@ -55,7 +59,7 @@ return (
     </div>
 
     </section>
-    </div>
+    </main>
 
 
 )

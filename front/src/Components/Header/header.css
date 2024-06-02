@@ -5,7 +5,7 @@ html{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  
 }
 
 
@@ -30,24 +30,25 @@ html{
   padding: 5px 20px;
 }
 
-.main-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  
-}
+
 
 .main-nav a.router-link-exact-active {
   color: #42b983;
 }
 
 .main-nav-item {
-  text-decoration: none;
+
   margin-right: 0.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   
+}
+
+.sign-in {
+  text-decoration: none;
+  color: #2c3e50;
 }
 
 .sign-in:hover {
@@ -62,5 +63,27 @@ html{
 .main-nav-logo-image {
   max-width: 100%;
   width: 200px;
+}
+
+.logout-icon {
+
+  
+  margin-right: 0.5rem;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-family: 'Helvetica';
+
+
+}
+
+.main-nav-item-online  {
+  display: flex;
+  color: #2c3e50;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
 }
 

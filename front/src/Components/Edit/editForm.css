@@ -1,0 +1,48 @@
+.update-name {
+    padding: 2rem;
+}
+    .title-update-name {
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 48px;
+        font-weight: 400;
+    }
+
+    .update-name-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .update-name-input-wrapper {
+        padding: 5px;
+        width: 100%;
+    }
+        label {
+            margin-right: 10px;
+        }
+
+        input {
+            border-radius: 4px;
+            padding: 5px;
+        }   
+    
+
+    .buttons-edit {
+        display: flex;
+        gap: 10px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+    .edit-button {
+        border: none;
+        border-radius: 4px;
+        padding: 15px;
+        width: 150px;
+        background-color: #00bc77;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+    }

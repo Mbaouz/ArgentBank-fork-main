@@ -1,17 +1,23 @@
 
+import HeaderOnLine from '../../Components/HeaderOnLine/HeaderOnLine';
 import './profile.css'
+import { useSelector} from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const Profile = () => {
-
+  const user = useSelector((state) => state.user);
 return(
-
+  <div>
+<HeaderOnLine/>
 <div className='container'>
 
     <main class="main bg-dark">
      
       <div className="header">
-        <h1>Welcome back<br />Tony Jarvis!</h1>
+        <h1>Welcome back<br />{user.firstName} {user.lastName}</h1>
+        <NavLink to={'/edit'}>
         <button className="edit-button">Edit Name</button>
+        </NavLink>
       </div>
 
 
@@ -50,7 +56,7 @@ return(
 
 
 </div>
-
+</div>
 
 )
 
