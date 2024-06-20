@@ -7,7 +7,7 @@ import Profile from './Pages/Profile/Profile';
 import { Provider } from 'react-redux';
 import {store} from './store/store'
 import SecureRoute from './secureRoute'
-import EditUser from './Pages/EditUser/EditUser';
+
 
 function App() {
   return (
@@ -20,7 +20,6 @@ function App() {
     <Route path='/' element={<Home />} />
     <Route path='/login' element={<Login/>}/>
     <Route path='/profile' element={<SecureRoute><Profile/></SecureRoute>}/>
-    <Route path='/edit' element={<SecureRoute><EditUser/></SecureRoute>}/>
     </Routes>
     
     <Footer/>

@@ -1,24 +1,27 @@
 
 import HeaderOnLine from '../../Components/HeaderOnLine/HeaderOnLine';
 import './profile.css'
-import { useSelector} from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import WelcomeUser from '../../Components/Welcome/WelcomeUser';
+import EditForm from '../../Components/Edit/EditForm';
+
+import { useState } from 'react';
 
 const Profile = () => {
-  const user = useSelector((state) => state.user);
+  
+  const [onchange, setOnchange] = useState();
+  const handleEditClick = () => {
+    setOnchange(!onchange);
+  };
+
+
 return(
   <div>
 <HeaderOnLine/>
 <div className='container'>
 
-    <main class="main bg-dark">
+    <main className="main bg-dark">
      
-      <div className="header">
-        <h1>Welcome back<br />{user.firstName} {user.lastName}</h1>
-        <NavLink to={'/edit'}>
-        <button className="edit-button">Edit Name</button>
-        </NavLink>
-      </div>
+    {onchange ? <EditForm  /> : <WelcomeUser  onEditClick={handleEditClick}  />}
 
 
       <h2 className="sr-only">Accounts</h2>

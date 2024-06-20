@@ -41,10 +41,11 @@ const EditForm = () => {
              <div className="update-name-input-wrapper">
                 
                 <input 
-                type="text" 
+                type="text"
                 id="user"
                 placeholder="New Username" 
                 onChange={e => setNewUserName(e.target.value)}
+                
                 />
              </div>
              <div className='buttons-edit'>
