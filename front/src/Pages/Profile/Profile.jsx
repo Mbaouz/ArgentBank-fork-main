@@ -8,10 +8,19 @@ import { useState } from 'react';
 
 const Profile = () => {
   
-  const [onchange, setOnchange] = useState();
+  const [onchange, setOnchange] = useState(false);
   const handleEditClick = () => {
-    setOnchange(!onchange);
+    setOnchange(true);
   };
+
+
+  const handleCancelClick = (e) => {
+    e.preventDefault();
+    setOnchange(false);
+     //dispatch(clearUser());
+  };
+
+
 
 
 return(
@@ -21,7 +30,7 @@ return(
 
     <main className="main bg-dark">
      
-    {onchange ? <EditForm  /> : <WelcomeUser  onEditClick={handleEditClick}  />}
+    {onchange ? <EditForm onCancel={handleCancelClick} /> : <WelcomeUser  onEditClick={handleEditClick}  />}
 
 
       <h2 className="sr-only">Accounts</h2>

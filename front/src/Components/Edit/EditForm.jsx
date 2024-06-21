@@ -7,7 +7,7 @@ import { clearUser } from "../../store/userSlice";
 import './editForm.css'
 
 
-const EditForm = () => {
+const EditForm = ({ onCancel }) => {
 
     const user = useSelector((state) => state.user);
     const token = useSelector ((state) => state.auth.token);
@@ -27,17 +27,13 @@ const EditForm = () => {
         };
     };
 
-    const handleCancelClick = async (e) => {
-        e.preventDefault();
-        dispatch(clearUser());
-        navigate('/profile');
-    };
+   
 
     
     return (
 <main className="main">
  <section className="update-name">
-       <form>
+       <form  onSubmit={handleSaveClick} >
              <div className="update-name-input-wrapper">
                 
                 <input 
@@ -45,12 +41,12 @@ const EditForm = () => {
                 id="user"
                 placeholder="New Username" 
                 onChange={e => setNewUserName(e.target.value)}
-                
+                required
                 />
              </div>
              <div className='buttons-edit'>
-                 <button onClick={handleSaveClick} type="submit" className="edit-button">Save</button>
-                 <button onClick={handleCancelClick} type="button" className="edit-button">Cancel</button>
+                 <button  type="submit" className="edit-button">Save</button>
+                 <button onClick={ onCancel } type="button" className="edit-button">Cancel</button>
             </div>
       </form>
 
